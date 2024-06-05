@@ -13,7 +13,7 @@ th,tr{white-space: nowrap;}
   <th>역할</th>
   <th>로그인계정</th>
   <th>비밀번호</th>
-  <th>availability</th>
+  <th>availablity</th>
   <th>위도</th>
   <th>경도</th>
 <% for (var i=0; i<data.length; i++){ %>
@@ -23,7 +23,7 @@ th,tr{white-space: nowrap;}
     <td><%= data[i].role %></td>
     <td><%= data[i].email %></td>
     <td><%= data[i].password %></td>
-    <td><%= data[i].availability %></td>
+    <td><%= data[i].availablity %></td>
     <% if (data[i].hasOwnProperty('position')) { %>
       <td><%= data[i].position.latitude %></td>
       <td><%= data[i].position.longitude %></td>

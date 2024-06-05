@@ -4,6 +4,7 @@ const Store = [
     name: '유재석',
     role: 'user',
     email: 'yujaesuk@gmail.com',
+    availablity: 0,
     password: '1234',
   },
   {
@@ -39,4 +40,21 @@ export const User = {
     driver.position.longitude = longitude;
     return driver;
   },
+  unavailable: async (email) => {
+    const driver = Store.find((s) => s.email === email);
+    driver.availablity = 0;
+    return driver;
+  },
+  getDriver : async({latitude, longitude})=>{
+    //첫번째 조건 : 손님을 태울준비가 되고, 운전자여야함.
+    const drivers = Store.filter(
+      (s) => s.availablity ==1 && s.role == 'driver'
+    )
+    return drivers;
+    //2번째 조건 : 나랑 가장 가까운 운전라를 찾아라.
+    //여기에 알고리즘
+
+
+  }
 };
+
